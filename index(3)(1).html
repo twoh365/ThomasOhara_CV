@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Thomas O'Hara — Customer Service & Operations Professional">
+<title>Thomas O'Hara | Customer Service & Operations</title>
+<style>
+  :root{
+    --bg:#080b10; --panel:#0f141c; --panel2:#131a24; --text:#f4f7fb;
+    --muted:#9aa6b5; --line:rgba(255,255,255,.09); --accent:#9be7d7;
+    --accent2:#7eb7ff; --max:1120px; --radius:24px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(126,183,255,.12),transparent 32rem),radial-gradient(circle at 10% 20%,rgba(155,231,215,.08),transparent 28rem),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:20;background:rgba(8,11,16,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  nav .inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-weight:800;letter-spacing:-.03em}.brand span{color:var(--accent)}
+  .links{display:flex;gap:24px;color:var(--muted);font-size:14px}.links a:hover{color:var(--text)}
+  .hero{padding:100px 0 80px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:end}
+  .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:clamp(48px,8vw,88px);line-height:.98;letter-spacing:-.065em;margin:16px 0 26px;max-width:850px}
+  .hero p{font-size:20px;color:var(--muted);max-width:760px}
+  .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .btn{padding:12px 18px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-weight:700}
+  .btn.primary{background:var(--text);color:#080b10;border-color:var(--text)}
+  .hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));padding:30px;border-radius:var(--radius)}
+  .hero-card-label{color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+  .stats{display:grid;gap:0}
+  .stat{display:grid;grid-template-columns:74px 1fr;gap:18px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
+  .stat:first-child{border-top:0;padding-top:0}
+  .stat:last-child{padding-bottom:0}
+  .stat-number{font-size:36px;line-height:1;font-weight:800;letter-spacing:-.055em;color:var(--text)}
+  .stat-copy{font-size:14px;line-height:1.35;color:#d9e0e9}
+  .stat-copy span{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+  section{padding:70px 0;border-top:1px solid var(--line)}
+  .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+  h2{font-size:40px;line-height:1.05;letter-spacing:-.045em;margin:0}.section-head p{color:var(--muted);max-width:520px;margin:0}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .card h3{margin:8px 0;font-size:22px;letter-spacing:-.02em}.card p,.card li{color:var(--muted)}
+  .tag{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(155,231,215,.09);color:var(--accent);font-size:12px;font-weight:700}
+  .timeline{position:relative;margin-top:20px}.timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:1px;background:var(--line)}
+  .item{position:relative;padding:0 0 42px 42px}.item:before{content:"";position:absolute;left:5px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(155,231,215,.08)}
+  .date{color:var(--accent);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+  .item h3{font-size:25px;margin:5px 0 0}.item .role{color:var(--muted);margin-bottom:14px}
+  ul{padding-left:20px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.metric{padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}.metric b{font-size:25px;display:block}.metric span{color:var(--muted);font-size:13px}
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+  .project h3{font-size:32px;line-height:1.05;letter-spacing:-.045em;margin:12px 0 16px}
+  .project a{color:var(--accent);font-weight:800}
+  .skills{display:flex;flex-wrap:wrap;gap:9px}.skill{border:1px solid var(--line);background:var(--panel);padding:9px 13px;border-radius:999px;color:#d7dee8;font-size:14px}
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grade{font-size:15px;color:var(--muted)}.grade b{color:var(--text)}
+  footer{padding:70px 0;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
+  .contact{font-size:clamp(28px,5vw,52px);letter-spacing:-.05em;color:var(--text);max-width:850px}
+  @media(max-width:800px){.hero,.grid,.projects,.edu{grid-template-columns:1fr}.hero{padding-top:70px}.links{display:none}.metrics{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}}
+  @media print{body{background:white;color:#111}nav,.buttons{display:none}.hero{padding:30px 0}.card,.hero-card,.metric{background:white;border:1px solid #ddd}section{padding:30px 0}.muted,.card p,.card li,.item .role,.grade{color:#444}a{color:#111}}
+</style>
+</head>
+<body>
+<nav><div class="wrap inner"><a class="brand" href="#">THOMAS<span>O'HARA</span></a><div class="links"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="wrap hero">
+  <div>
+    <div class="eyebrow">Customer Service · Operations · Digital Solutions</div>
+    <h1>People, processes and systems.</h1>
+    <p>Customer service and operations professional with 8+ years in regulated financial services, complemented by frontline hospitality experience and hands-on development of bespoke digital solutions for businesses.</p>
+    <div class="buttons"><a class="btn primary" href="mailto:thomasohara95@gmail.com">Get in touch</a><a class="btn" href="#experience">Explore experience ↓</a></div>
+  </div>
+  <aside class="hero-card">
+    <div class="hero-card-label">At a glance</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">8+</div>
+        <div class="stat-copy">Years in financial services<span>Customer-facing &amp; regulated operations</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">4</div>
+        <div class="stat-copy">Hotel businesses supported<span>Through a bespoke invoice platform</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">A</div>
+        <div class="stat-copy">Mathematics &amp; Physics<span>SWAP results · Chemistry B</span></div>
+      </div>
+    </div>
+  </aside>
+</header>
+
+<main>
+<section id="experience"><div class="wrap">
+  <div class="section-head"><h2>Experience</h2><p>A career built around helping people, handling important information accurately and solving practical problems.</p></div>
+  <div class="timeline">
+    <article class="item"><div class="date">Aug 2013 — 2021/2022</div><h3>Atos — servicing Aegon UK pension schemes</h3><div class="role">Customer Service Representative / Complaints Officer</div>
+      <ul>
+        <li>Provided direct customer and pension-member support within a regulated financial-services environment.</li>
+        <li>Administered group and individual pension schemes and handled complex customer enquiries.</li>
+        <li>Uploaded and processed monthly payroll data, investigating discrepancies and correcting missing or inaccurate member information.</li>
+        <li>Identified incorrect member statuses, including contributions received for members who had retired or taken their benefits.</li>
+        <li>Processed refunds within required timescales and allocated funds against the correct business/fund price date.</li>
+        <li>Worked with FCA, anti-money-laundering and GDPR requirements, with a strong focus on accuracy and compliance.</li>
+        <li>Performed quality assurance, audited unallocated funds, reconciled pension schemes and produced profit/loss calculations.</li>
+        <li>Supported member onboarding onto newer pension systems and coached new colleagues.</li>
+        <li>Forecast workloads and supported the department in maintaining SLA/RAG positions.</li>
+      </ul>
+    </article>
+    <article class="item"><div class="date">Aug 2023 — Present</div><h3>Staycity Aparthotels — West End</h3><div class="role">Hotel Receptionist</div>
+      <ul>
+        <li>Provide face-to-face customer service in a busy hospitality environment.</li>
+        <li>Handle guest enquiries and resolve issues quickly and professionally.</li>
+        <li>Manage competing customer needs while maintaining a positive guest experience.</li>
+        <li>Work collaboratively across hotel operations and communicate clearly under pressure.</li>
+      </ul>
+    </article>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="section-head"><h2>Digital projects</h2><p>Independent projects turning real business requirements into practical customer and operational tools.</p></div>
+  <div class="projects">
+    <article class="card project"><div><span class="tag">Business software</span><h3>Multi-business invoice platform</h3><p>Designed and developed an invoice-generation solution for On The Walk Ltd, supporting four subsidiary hospitality businesses. The system generates branded invoices with the relevant VAT and company-registration information for hotel clients.</p></div><a href="https://crosskeyspdf.netlify.app/" target="_blank" rel="noopener">Open invoice maker ↗</a></article>
+    <article class="card project"><div><span class="tag">Web · Customer journey</span><h3>Todd Podiatry</h3><p>Designed and developed a website for a mobile podiatry service covering Edinburgh, East Lothian and Fife, including an enquiry workflow that captures prospective patient details and preferred contact method/time for follow-up.</p></div><a href="https://toddpodiatry.co.uk/" target="_blank" rel="noopener">Visit website ↗</a></article>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="section-head"><h2>Capabilities</h2><p>Customer-facing expertise backed by operational discipline, data accuracy and technical curiosity.</p></div>
+  <div class="skills">
+    <span class="skill">Customer Service</span><span class="skill">Complaint Resolution</span><span class="skill">Complex Queries</span><span class="skill">Pension Administration</span><span class="skill">Data Validation</span><span class="skill">Payroll Processing</span><span class="skill">Financial Transactions</span><span class="skill">Refund Processing</span><span class="skill">Reconciliation</span><span class="skill">Quality Assurance</span><span class="skill">Auditing</span><span class="skill">GDPR</span><span class="skill">FCA / AML Environment</span><span class="skill">SLA / KPI Management</span><span class="skill">Customer Onboarding</span><span class="skill">System Change</span><span class="skill">Colleague Coaching</span><span class="skill">Microsoft Office</span><span class="skill">Web Development</span><span class="skill">Process Improvement</span>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="section-head"><h2>Education</h2><p>Professional qualifications alongside later academic study in quantitative and scientific subjects.</p></div>
+  <div class="edu">
+    <article class="card"><span class="tag">2022</span><h3>Scottish Wider Access Programme</h3><p class="grade"><b>Physics A</b> · <b>Mathematics A</b> · <b>Chemistry B</b> · Communications Pass</p></article>
+    <article class="card"><span class="tag">2019</span><h3>SVQ Providing Financial Services</h3><p class="grade">SQA Modern Apprenticeship · SCQF Level 6</p></article>
+    <article class="card"><span class="tag">2012</span><h3>Highers</h3><p class="grade">History B · Computing Studies C · English C · Intermediate 2 Chemistry C</p></article>
+    <article class="card"><span class="tag">2011</span><h3>Standard Grades</h3><p class="grade">Grade 2: English, German, History, Computing & Chemistry · Grade 3: Maths, Physics & Graphic Communication</p></article>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="eyebrow">Contact</div>
+  <div class="contact">Interested in someone who can understand the customer, the process and the system behind it?</div>
+  <div class="buttons"><a class="btn primary" href="mailto:thomasohara95@gmail.com">thomasohara95@gmail.com</a><a class="btn" href="tel:+447794891863">07794 891863</a></div>
+</div></section>
+</main>
+
+<footer class="wrap"><span>© Thomas O'Hara</span><span>Edinburgh, Scotland</span></footer>
+</body>
+</html>
